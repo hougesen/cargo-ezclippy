@@ -1,6 +1,17 @@
+use clap::Parser;
+
+use crate::{
+    cli::{Cli, EzClippyCommand},
+    error::EzClippyError,
+};
+
 mod init;
 mod schema;
 
-pub fn execute_command() {
-    schema::run();
+#[inline]
+pub fn execute_command() -> Result<(), EzClippyError> {
+    match Cli::parse().command {
+        EzClippyCommand::Init => init::run(),
+        EzClippyCommand::Schema => schema::run(),
+    }
 }

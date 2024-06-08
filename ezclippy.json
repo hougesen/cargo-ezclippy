@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hougesen/cargo-ezclippy/main/schemas/v0.0.0/ezclippy.schema.json",
+  "cargo": {},
+  "complexity": {},
+  "correctness": {},
+  "deprecated": {},
+  "nursery": {},
+  "pedantic": {},
+  "perf": {},
+  "restriction": {},
+  "style": {},
+  "suspicious": {}
+}

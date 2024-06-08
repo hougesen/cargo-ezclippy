@@ -1,17 +1,17 @@
-use crate::lints::Lint;
+#[inline]
+pub fn default_schema_location() -> String {
+    let package_version = env!("CARGO_PKG_VERSION");
 
-pub fn build_config(
-    lints: Vec<Lint>,
-) -> std::collections::HashMap<String, std::collections::HashMap<String, String>> {
-    let mut rules =
-        std::collections::HashMap::<String, std::collections::HashMap<String, String>>::new();
+    format!("https://raw.githubusercontent.com/hougesen/cargo-ezclippy/main/schemas/v{package_version}/ezclippy.schema.json")
+}
 
-    for lint in lints {
-        rules
-            .entry(lint.group)
-            .or_default()
-            .insert(lint.id, lint.level);
+impl crate::generated::Config {
+    #[inline]
+    pub fn new() -> Self {
+        Self {
+            schema: default_schema_location(),
+
+            ..Default::default()
+        }
     }
-
-    rules
 }

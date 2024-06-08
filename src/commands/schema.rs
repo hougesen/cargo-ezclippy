@@ -1,15 +1,18 @@
-use crate::{config::build_config, lints::get_available_lints};
+use crate::{error::EzClippyError, generated::Config};
 
-pub fn run() {
-    let lints = get_available_lints().unwrap();
+#[inline]
+pub fn run() -> Result<(), EzClippyError> {
+    let mut path = std::env::current_dir()?;
 
-    let config = build_config(lints);
+    let package_version = env!("CARGO_PKG_VERSION");
 
-    let schema = schemars::schema_for_value!(config);
+    path.push(format!("schemas/v{package_version}"));
 
-    std::fs::write(
-        "schema.json",
-        serde_json::to_string_pretty(&schema).unwrap(),
-    )
-    .unwrap();
+    std::fs::create_dir_all(&path)?;
+
+    let schema = serde_json::to_string_pretty(&schemars::schema_for!(Config))?;
+
+    std::fs::write(path.join("ezclippy.schema.json"), schema)?;
+
+    Ok(())
 }

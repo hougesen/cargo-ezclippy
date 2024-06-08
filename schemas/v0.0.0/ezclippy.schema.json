@@ -1,0 +1,7539 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Config",
+  "type": "object",
+  "required": [
+    "cargo",
+    "complexity",
+    "correctness",
+    "deprecated",
+    "nursery",
+    "pedantic",
+    "perf",
+    "restriction",
+    "style",
+    "suspicious"
+  ],
+  "properties": {
+    "$schema": {
+      "default": "https://raw.githubusercontent.com/hougesen/cargo-ezclippy/main/schemas/v0.0.0/ezclippy.schema.json",
+      "type": "string"
+    },
+    "cargo": {
+      "$ref": "#/definitions/CargoGroup"
+    },
+    "complexity": {
+      "$ref": "#/definitions/ComplexityGroup"
+    },
+    "correctness": {
+      "$ref": "#/definitions/CorrectnessGroup"
+    },
+    "deprecated": {
+      "$ref": "#/definitions/DeprecatedGroup"
+    },
+    "nursery": {
+      "$ref": "#/definitions/NurseryGroup"
+    },
+    "pedantic": {
+      "$ref": "#/definitions/PedanticGroup"
+    },
+    "perf": {
+      "$ref": "#/definitions/PerfGroup"
+    },
+    "restriction": {
+      "$ref": "#/definitions/RestrictionGroup"
+    },
+    "style": {
+      "$ref": "#/definitions/StyleGroup"
+    },
+    "suspicious": {
+      "$ref": "#/definitions/SuspiciousGroup"
+    }
+  },
+  "definitions": {
+    "CargoGroup": {
+      "type": "object",
+      "properties": {
+        "cargo_common_metadata": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "multiple_crate_versions": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "negative_feature_names": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_feature_names": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "wildcard_dependencies": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "ComplexityGroup": {
+      "type": "object",
+      "properties": {
+        "bind_instead_of_map": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bool_comparison": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "borrow_deref_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "borrowed_box": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bytes_count_to_len": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "char_lit_as_u8": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "clone_on_copy": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "crosspointer_transmute": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "default_constructed_unit_structs": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "deprecated_cfg_attr": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "deref_addrof": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "derivable_impls": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "diverging_sub_expression": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "double_comparisons": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "double_parens": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "duration_subsec": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "excessive_nesting": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "explicit_auto_deref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "explicit_counter_loop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "explicit_write": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "extra_unused_lifetimes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "extra_unused_type_parameters": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "filter_map_identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "filter_next": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "flat_map_identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "get_last_with_len": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "identity_op": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "implied_bounds_in_impls": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inspect_for_each": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "int_plus_one": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_count": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_kv_map": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "let_with_type_underscore": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_clamp": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_filter": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_filter_map": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_find": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_find_map": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_flatten": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_hash_one": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_main_separator_str": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_range_patterns": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_rem_euclid": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_slice_size_calculation": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_split_once": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_strip": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_swap": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_unwrap_or": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "map_flatten": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "map_identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "match_as_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "match_single_binding": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_arbitrary_self_type": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_bool": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_bool_assign": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_borrowed_reference": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_if": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_lifetimes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_match": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_option_as_deref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_option_take": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_question_mark": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_splitn": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_update": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "neg_cmp_op_on_partial_ord": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "no_effect": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "nonminimal_bool": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "only_used_in_recursion": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "option_as_ref_deref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "option_filter_map": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "option_map_unit_fn": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "or_then_unwrap": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "overflow_check_conditional": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "partialeq_ne_impl": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "precedence": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ptr_offset_with_cast": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "range_zip_with_len": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_as_str": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_async_block": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_at_rest_pattern": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_closure_call": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_guards": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_slicing": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "repeat_once": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reserve_after_initialization": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "result_filter_map": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "result_map_unit_fn": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "search_is_some": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "seek_from_current": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "seek_to_start_instead_of_rewind": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "short_circuit_statement": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "single_element_loop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "skip_while_next": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "string_from_utf8_as_bytes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "strlen_on_c_strings": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "temporary_assignment": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "too_many_arguments": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "transmute_bytes_to_str": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "transmute_float_to_int": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "transmute_int_to_bool": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "transmute_int_to_char": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "transmute_int_to_float": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "transmute_int_to_non_zero": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "transmute_num_to_bytes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "transmute_ptr_to_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "transmutes_expressible_as_ptr_casts": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "type_complexity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unit_arg": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_cast": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_filter_map": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_find_map": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_literal_unwrap": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_map_on_constructor": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_operation": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_sort_by": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_unwrap": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unneeded_wildcard_pattern": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unused_format_specs": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "useless_asref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "useless_conversion": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "useless_format": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "useless_transmute": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "vec_box": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "while_let_loop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "wildcard_in_or_patterns": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "zero_divided_by_zero": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "zero_prefixed_literal": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "CorrectnessGroup": {
+      "type": "object",
+      "properties": {
+        "absurd_extreme_comparisons": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "almost_swapped": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "approx_constant": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "async_yields_async": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bad_bit_mask": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cast_slice_different_sizes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "deprecated_semver": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "derive_ord_xor_partial_ord": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "derived_hash_with_manual_eq": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "eager_transmute": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "enum_clike_unportable_variant": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "eq_op": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "erasing_op": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fn_address_comparisons": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "if_let_mutex": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ifs_same_cond": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "impl_hash_borrow_with_str_and_bytes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "impossible_comparisons": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ineffective_bit_mask": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "infinite_iter": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inherent_to_string_shadow_display": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inline_fn_without_body": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "invalid_null_ptr_usage": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "invalid_regex": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "invisible_characters": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_next_loop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_skip_zero": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iterator_step_by_zero": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "let_underscore_lock": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lint_groups_priority": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "match_str_case_mismatch": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mem_replace_with_uninit": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "min_max": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mistyped_literal_suffixes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "modulo_one": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mut_from_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "never_loop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "non_octal_unix_permissions": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "nonsensical_open_options": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "not_unsafe_ptr_arg_deref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "option_env_unwrap": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "out_of_bounds_indexing": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "overly_complex_bool_expr": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "panicking_unwrap": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "possible_missing_comma": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "read_line_without_trim": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "recursive_format_impl": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_comparisons": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_locals": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reversed_empty_ranges": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "self_assignment": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "serde_api_misuse": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "size_of_in_element_count": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "suspicious_splitn": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "transmute_null_to_fn": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "transmuting_null": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "uninit_assumed_init": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "uninit_vec": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unit_cmp": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unit_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unit_return_expecting_ord": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unsound_collection_transmute": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unused_io_amount": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "useless_attribute": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "vec_resize_to_zero": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "while_immutable_condition": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "wrong_transmute": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "zst_offset": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "DeprecatedGroup": {
+      "type": "object",
+      "properties": {
+        "assign_ops": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "extend_from_slice": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "filter_map": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "find_map": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "if_let_redundant_pattern_matching": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "maybe_misused_cfg": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "misaligned_transmute": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mismatched_target_os": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pub_enum_variant_names": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "range_step_by_zero": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "regex_macro": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "replace_consts": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "should_assert_eq": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unsafe_vector_initialization": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unstable_as_mut_slice": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unstable_as_slice": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unused_collect": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "wrong_pub_self_convention": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "LintLevel": {
+      "type": "string",
+      "enum": ["allow", "warn", "deny"]
+    },
+    "NurseryGroup": {
+      "type": "object",
+      "properties": {
+        "as_ptr_cast_mut": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "branches_sharing_code": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "clear_with_drain": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cognitive_complexity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "collection_is_never_read": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "debug_assert_with_mut_call": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "derive_partial_eq_without_eq": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "empty_line_after_doc_comments": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "empty_line_after_outer_attr": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "equatable_if_let": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fallible_impl_from": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "future_not_send": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "imprecise_flops": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_on_empty_collections": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_on_single_items": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_with_drain": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "large_stack_frames": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_const_for_fn": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mutex_integer": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_collect": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_pass_by_ref_mut": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "non_send_fields_in_send_ty": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "nonstandard_macro_braces": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "option_if_let_else": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "or_fun_call": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "path_buf_push_overwrite": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "read_zero_byte_vec": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_clone": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_pub_crate": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "significant_drop_in_scrutinee": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "significant_drop_tightening": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "string_lit_as_bytes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "suboptimal_flops": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "suspicious_operation_groupings": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "trailing_empty_array": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "trait_duplication_in_bounds": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "transmute_undefined_repr": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "trivial_regex": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "tuple_array_conversions": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "type_repetition_in_bounds": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "uninhabited_references": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_struct_initialization": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unused_peekable": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unused_rounding": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "use_self": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "useless_let_if_seq": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "while_float": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "PedanticGroup": {
+      "type": "object",
+      "properties": {
+        "assigning_clones": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bool_to_int_with_if": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "borrow_as_ptr": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "case_sensitive_file_extension_comparisons": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cast_lossless": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cast_possible_truncation": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cast_possible_wrap": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cast_precision_loss": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cast_ptr_alignment": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cast_sign_loss": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "checked_conversions": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cloned_instead_of_copied": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "copy_iterator": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "default_trait_access": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "doc_link_with_quotes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "doc_markdown": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "empty_enum": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "enum_glob_use": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "expl_impl_clone_on_copy": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "explicit_deref_methods": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "explicit_into_iter_loop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "explicit_iter_loop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "filter_map_next": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "flat_map_option": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "float_cmp": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fn_params_excessive_bools": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "from_iter_instead_of_collect": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "if_not_else": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ignored_unit_patterns": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "implicit_clone": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "implicit_hasher": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inconsistent_struct_constructor": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "index_refutable_slice": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inefficient_to_string": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inline_always": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "into_iter_without_iter": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "invalid_upcast_comparisons": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "items_after_statements": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_filter_is_ok": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_filter_is_some": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_not_returning_iterator": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_without_into_iter": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "large_digit_groups": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "large_futures": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "large_stack_arrays": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "large_types_passed_by_value": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "linkedlist": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "macro_use_imports": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_assert": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_c_str_literals": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_instant_elapsed": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_is_variant_and": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_let_else": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_ok_or": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_string_new": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "many_single_char_names": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "map_unwrap_or": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "match_bool": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "match_on_vec_items": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "match_same_arms": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "match_wild_err_arm": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "match_wildcard_for_single_variants": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "maybe_infinite_iter": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mismatching_type_param_order": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_errors_doc": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_fields_in_debug": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_panics_doc": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "module_name_repetitions": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "must_use_candidate": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mut_mut": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "naive_bytecount": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_bitwise_bool": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_continue": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_for_each": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_pass_by_value": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_raw_string_hashes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "no_effect_underscore_binding": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "no_mangle_with_rust_abi": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "option_as_ref_cloned": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "option_option": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ptr_as_ptr": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ptr_cast_constness": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pub_underscore_fields": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "range_minus_one": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "range_plus_one": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_closure_for_method_calls": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_else": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ref_as_ptr": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ref_binding_to_reference": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ref_option_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "return_self_not_must_use": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "same_functions_in_if_condition": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "semicolon_if_nothing_returned": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "should_panic_without_expect": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "similar_names": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "single_char_pattern": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "single_match_else": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stable_sort_primitive": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "str_split_at_newline": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "string_add_assign": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "struct_excessive_bools": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "struct_field_names": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "too_many_lines": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "transmute_ptr_to_ptr": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "trivially_copy_pass_by_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unchecked_duration_subtraction": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unicode_not_nfc": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "uninlined_format_args": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_box_returns": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_join": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_wraps": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnested_or_patterns": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unreadable_literal": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unsafe_derive_deserialize": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unused_async": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unused_self": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "used_underscore_binding": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "verbose_bit_mask": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "wildcard_imports": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "zero_sized_map_values": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "PerfGroup": {
+      "type": "object",
+      "properties": {
+        "box_collection": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "boxed_local": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cmp_owned": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "collapsible_str_replace": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "drain_collect": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "expect_fun_call": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "extend_with_drain": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "format_collect": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "format_in_format_args": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_overeager_cloned": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "large_const_arrays": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "large_enum_variant": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_memcpy": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_retain": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_str_repeat": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_try_fold": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "map_entry": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_spin_loop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "readonly_write_lock": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_allocation": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "result_large_err": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "slow_vector_initialization": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "thread_local_initializer_can_be_made_const": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "to_string_in_format_args": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_to_owned": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "useless_vec": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "vec_init_then_push": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "waker_clone_wake": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "RestrictionGroup": {
+      "type": "object",
+      "properties": {
+        "absolute_paths": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "alloc_instead_of_core": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "allow_attributes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "allow_attributes_without_reason": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "arithmetic_side_effects": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "as_conversions": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "as_underscore": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "assertions_on_result_states": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "big_endian_bytes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "clone_on_ref_ptr": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "create_dir": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "dbg_macro": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "decimal_literal_representation": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "default_numeric_fallback": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "default_union_representation": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "deref_by_slicing": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "disallowed_script_idents": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "else_if_without_else": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "empty_drop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "empty_enum_variants_with_brackets": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "empty_structs_with_brackets": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "error_impl_error": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "exhaustive_enums": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "exhaustive_structs": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "exit": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "expect_used": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "filetype_is_file": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "float_arithmetic": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "float_cmp_const": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fn_to_numeric_cast_any": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "format_push_string": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "get_unwrap": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "host_endian_bytes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "if_then_some_else_none": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "impl_trait_in_params": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "implicit_return": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "indexing_slicing": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "infinite_loop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inline_asm_x86_att_syntax": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inline_asm_x86_intel_syntax": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "integer_division": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "integer_division_remainder_used": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_over_hash_type": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "large_include_file": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "let_underscore_must_use": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "let_underscore_untyped": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "little_endian_bytes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lossy_float_literal": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "map_err_ignore": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mem_forget": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "min_ident_chars": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_assert_message": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_asserts_for_indexing": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_docs_in_private_items": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_inline_in_public_items": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_trait_methods": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mixed_read_write_in_expression": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mod_module_files": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "modulo_arithmetic": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "multiple_inherent_impl": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "multiple_unsafe_ops_per_block": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mutex_atomic": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_raw_strings": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "non_ascii_literal": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "panic": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "panic_in_result_fn": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "partial_pub_fields": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pattern_type_mismatch": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "print_stderr": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "print_stdout": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pub_use": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pub_with_shorthand": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pub_without_shorthand": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "question_mark_used": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rc_buffer": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rc_mutex": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_type_annotations": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ref_patterns": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "renamed_function_params": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rest_pat_in_fully_bound_structs": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "same_name_method": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "self_named_module_files": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "semicolon_inside_block": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "semicolon_outside_block": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "separated_literal_suffix": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shadow_reuse": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shadow_same": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shadow_unrelated": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "single_call_fn": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "single_char_lifetime_names": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "std_instead_of_alloc": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "std_instead_of_core": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "str_to_string": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "string_add": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "string_lit_chars_any": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "string_slice": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "string_to_string": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "suspicious_xor_used_as_pow": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "tests_outside_test_module": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "todo": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "try_err": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "undocumented_unsafe_blocks": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unimplemented": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_safety_comment": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_safety_doc": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_self_imports": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unneeded_field_pattern": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unreachable": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unseparated_literal_suffix": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unwrap_in_result": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unwrap_used": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "use_debug": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "verbose_file_reads": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "wildcard_enum_match_arm": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "StyleGroup": {
+      "type": "object",
+      "properties": {
+        "assertions_on_constants": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "assign_op_pattern": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "blocks_in_conditions": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bool_assert_comparison": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "borrow_interior_mutable_const": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "box_default": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "builtin_type_shadow": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bytes_nth": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "chars_last_cmp": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "chars_next_cmp": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cmp_null": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "collapsible_else_if": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "collapsible_if": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "collapsible_match": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "comparison_chain": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "comparison_to_empty": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "declare_interior_mutable_const": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "default_instead_of_iter_empty": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "disallowed_macros": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "disallowed_methods": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "disallowed_names": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "disallowed_types": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "doc_lazy_continuation": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "double_must_use": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "double_neg": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "duplicate_underscore_argument": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "enum_variant_names": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "err_expect": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "excessive_precision": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "field_reassign_with_default": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "filter_map_bool_then": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fn_to_numeric_cast": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fn_to_numeric_cast_with_truncation": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "for_kv_map": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "from_over_into": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "from_str_radix_10": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "get_first": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "if_same_then_else": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "implicit_saturating_add": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "implicit_saturating_sub": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inconsistent_digit_grouping": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "infallible_destructuring_match": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inherent_to_string": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "init_numbered_fields": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "into_iter_on_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "is_digit_ascii_radix": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "items_after_test_module": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_cloned_collect": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_next_slice": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_nth": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_nth_zero": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_skip_next": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "just_underscores_and_digits": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "legacy_numeric_constants": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "len_without_is_empty": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "len_zero": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "let_and_return": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "let_unit_value": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "main_recursion": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_async_fn": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_bits": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_is_ascii_check": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_is_finite": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_is_infinite": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_map": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_next_back": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_non_exhaustive": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_range_contains": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_saturating_arithmetic": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_while_let_some": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "map_clone": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "map_collect_result_unit": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "match_like_matches_macro": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "match_overlapping_arm": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "match_ref_pats": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "match_result_ok": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mem_replace_option_with_none": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mem_replace_with_default": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_enforced_import_renames": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_safety_doc": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mixed_attributes_style": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mixed_case_hex_literals": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "module_inception": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "must_use_unit": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mut_mutex_lock": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_borrow": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_borrows_for_generic_args": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_doctest_main": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_else": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_late_init": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_parens_on_range_literals": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_pub_self": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_range_loop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_return": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_return_with_question_mark": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "neg_multiply": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "new_ret_no_self": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "new_without_default": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "non_minimal_cfg": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "obfuscated_if_else": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ok_expect": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "op_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "option_map_or_err_ok": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "option_map_or_none": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "partialeq_to_none": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "print_literal": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "print_with_newline": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "println_empty_string": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ptr_arg": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ptr_eq": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "question_mark": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_closure": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_field_names": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_pattern": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_pattern_matching": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "redundant_static_lifetimes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "result_map_or_into_option": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "result_unit_err": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "same_item_push": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "self_named_constructors": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "should_implement_trait": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "single_char_add_str": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "single_component_path_imports": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "single_match": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "string_extend_chars": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "tabs_in_doc_comments": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "to_digit_is_some": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "to_string_trait_impl": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "toplevel_ref_arg": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "trim_split_whitespace": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_fallible_conversions": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_fold": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_lazy_evaluations": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_mut_passed": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_owned_empty_strings": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unsafe_removed_from_name": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unused_enumerate_index": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unused_unit": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unusual_byte_groupings": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unwrap_or_default": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "upper_case_acronyms": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "while_let_on_iterator": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "write_literal": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "write_with_newline": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "writeln_empty_string": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "wrong_self_convention": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "zero_ptr": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "SuspiciousGroup": {
+      "type": "object",
+      "properties": {
+        "almost_complete_range": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "arc_with_non_send_sync": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "await_holding_invalid_type": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "await_holding_lock": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "await_holding_refcell_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "blanket_clippy_restriction_lints": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cast_abs_to_unsigned": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cast_enum_constructor": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cast_enum_truncation": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cast_nan_to_int": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cast_slice_from_raw_parts": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "const_is_empty": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "crate_in_macro_def": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "deprecated_clippy_cfg_attr": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "drop_non_drop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "duplicate_mod": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "duplicated_attributes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "empty_docs": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "empty_loop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "float_equality_without_abs": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "forget_non_drop": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "four_forward_slashes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "from_raw_with_void_ptr": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "incompatible_msrv": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ineffective_open_options": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "iter_out_of_bounds": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "join_absolute_paths": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "let_underscore_future": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lines_filter_map_ok": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "macro_metavars_in_unsafe": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_unwrap_or_default": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "misnamed_getters": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "misrefactored_assign_op": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_transmute_annotations": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "multi_assignments": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "multiple_bound_locations": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mut_range_bound": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mutable_key_type": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_character_iteration": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "needless_maybe_sized": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "no_effect_replace": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "non_canonical_clone_impl": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "non_canonical_partial_ord_impl": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "octal_escapes": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "path_ends_with_ext": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "permissions_set_readonly_false": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "print_in_format_impl": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rc_clone_in_vec_init": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "repeat_vec_with_capacity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "single_range_in_vec_init": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "size_of_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "suspicious_arithmetic_impl": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "suspicious_assignment_formatting": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "suspicious_command_arg_space": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "suspicious_doc_comments": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "suspicious_else_formatting": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "suspicious_map": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "suspicious_op_assign_impl": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "suspicious_open_options": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "suspicious_to_owned": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "suspicious_unary_op_formatting": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "swap_ptr_to_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "test_attr_in_doctest": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "type_id_on_box": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unconditional_recursion": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_clippy_cfg": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_get_then_check": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unnecessary_result_map_or_else": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "zero_repeat_side_effects": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LintLevel"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
