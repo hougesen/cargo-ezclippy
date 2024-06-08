@@ -11,8 +11,8 @@ homepage = "https://github.com/hougesen/cargo-ezclippy"
 readme = "README.md"
 categories = ["development-tools", "command-line-utilities"]
 
-
 [dependencies]
+clap = { version = "4.5.6", features = ["derive"] }
 reqwest = { version = "0.12.4", features = ["blocking", "json"] }
 schemars = "0.8.21"
 serde = { version = "1.0.203", features = ["derive"] }

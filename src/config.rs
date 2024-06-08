@@ -1,8 +1,18 @@
 use crate::lints::Lint;
 
-pub fn build_config(
-    lints: Vec<Lint>,
-) -> std::collections::HashMap<String, std::collections::HashMap<String, String>> {
+fn default_schema_location() -> String {
+    "./schema.json".to_owned()
+}
+
+#[derive(serde::Deserialize, serde::Serialize)]
+pub struct Config {
+    #[serde(rename = "$schema", default = "default_schema_location")]
+    pub schema: String,
+
+    pub rules: std::collections::HashMap<String, std::collections::HashMap<String, String>>,
+}
+
+pub fn build_config(lints: Vec<Lint>) -> Config {
     let mut rules =
         std::collections::HashMap::<String, std::collections::HashMap<String, String>>::new();
 
@@ -13,5 +23,8 @@ pub fn build_config(
             .insert(lint.id, lint.level);
     }
 
-    rules
+    Config {
+        schema: default_schema_location(),
+        rules,
+    }
 }
