@@ -1,0 +1,19 @@
+[package]
+name = "cargo-ezclippy"
+version = "0.0.0"
+edition = "2021"
+description = "Easily customize clippy rules."
+authors = ["Mads Hougesen <mads@mhouge.dk>"]
+license = "MIT"
+repository = "https://github.com/hougesen/cargo-ezclippy"
+keywords = ["clippy", "linter"]
+homepage = "https://github.com/hougesen/cargo-ezclippy"
+readme = "README.md"
+categories = ["development-tools", "command-line-utilities"]
+
+
+[dependencies]
+reqwest = { version = "0.12.4", features = ["blocking", "json"] }
+schemars = "0.8.21"
+serde = { version = "1.0.203", features = ["derive"] }
+serde_json = "1.0.117"
