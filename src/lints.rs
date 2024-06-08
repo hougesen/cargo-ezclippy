@@ -1,11 +1,13 @@
-#[derive(Debug, serde::Deserialize)]
-pub struct Lint {
-    pub id: String,
-    pub group: String,
-    pub level: String,
-}
+use schemars::JsonSchema;
 
-pub fn get_available_lints() -> Result<Vec<Lint>, reqwest::Error> {
-    reqwest::blocking::get("https://rust-lang.github.io/rust-clippy/master/lints.json")?
-        .json::<Vec<Lint>>()
+#[derive(
+    Debug, serde::Deserialize, serde::Serialize, PartialEq, Eq, PartialOrd, Ord, Hash, JsonSchema,
+)]
+pub enum LintLevel {
+    #[serde(rename = "allow")]
+    Allow,
+    #[serde(rename = "warn")]
+    Warn,
+    #[serde(rename = "deny")]
+    Deny,
 }

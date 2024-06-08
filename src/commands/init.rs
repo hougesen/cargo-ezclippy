@@ -1,11 +1,12 @@
-use crate::{config::build_config, lints::get_available_lints};
+use crate::{error::EzClippyError, generated::Config};
 
-pub fn run() {
-    let lints = get_available_lints().unwrap();
+#[inline]
+pub fn run() -> Result<(), EzClippyError> {
+    let config = Config::new();
 
-    let config = build_config(lints);
+    let json = serde_json::to_string_pretty(&config)?;
 
-    let json = serde_json::to_string_pretty(&config).unwrap();
+    std::fs::write("ezclippy.json", json)?;
 
-    std::fs::write(".ezclipy.json", json).unwrap();
+    Ok(())
 }
